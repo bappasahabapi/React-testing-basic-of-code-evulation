@@ -1,20 +1,3 @@
-# Getting Started with Create React App
-
-`📦By default   jest is install inside  `
-
-    node_modules/react-scripts/package.json 
-
-`📦 Project setup`
-
-    node --version
-    git --version
-    npx create-react-app . --template typescript
-    npm start
-`To Test the File run the command in the terminal`
-
-    npm test
-
-
 `📦 Test Structure`
 
     test(name,function,timeout)
@@ -32,37 +15,21 @@ test('render learn react link',()=>{
 
 ```
 
-`📁-02. working on component/greet/greet.test.tsx`
+`🐘 By default   jest is install inside  `
 
-### 🗒️ *greet.tsx*
+    node_modules/react-scripts/package.json 
 
-```ts
-import { GreetProps } from "./greet.type"
-export const Greet = (props:GreetProps) => {
-  return (
-    <div>
-        Hello {props.name}
-    </div>
-  )
-}
+`📦 Project setup`
 
-```
-### ☑️ greet.test.tsx
-```ts
-import {render, screen} from '@testing-library/react';
-import { Greet } from './greet';
+    node --version
+    git --version
+    npx create-react-app . --template typescript
+    npm start
+`To Test the File run the command in the terminal`
 
-test('Greet Component renders correctly',()=>{
-    render(<Greet/>)
-    //  const textElement = screen.getByText('hello');
-     const textElement = screen.getByText(/hello/i);
-     expect(textElement).toBeInTheDocument()
-})
+    npm test
 
-test('Greet render with name props',()=>{
-    render(<Greet name='bappa'/>)
-   const textElement= screen.getByText('Hello bappa')
-    expect(textElement).toBeInTheDocument()
-})
+`🧿 JEST WATCH MODE`
 
-```
+
+
