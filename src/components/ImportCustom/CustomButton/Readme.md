@@ -1,12 +1,13 @@
 `Explain:`
 
-In this test case, we first define a ** mock click function** and a button name to pass as props to the CustomButton component. We then render the component with these props.
+In this test case, we first define a **mock click function** and a **button name** to pass as props to the CustomButton component. We then render the component with these props.
 
-Next, we check that the button with the provided name is rendered and is in the document. We use the getByRole method from the testing library to get the button element by its role and name.
+Next, we check that the **button with the provided name** is rendered and is in the document. We use the **getByRole method** from the testing library to get the button element by its role and name.
 
 Finally, we simulate a click event on the button and check that the provided click function is called. We use the fireEvent method from the testing library to simulate a click event on the button element, and the toHaveBeenCalled method from Jest's mock function API to check that the mock click function has been called.
-    
- 📁 **CustomButton.tsx**
+
+📁 **CustomButton.tsx**
+
 ```ts
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -21,7 +22,9 @@ function CustomButton(props: { name: string; clickFunction: () => void }) {
         variant="contained"
         size="large"
         color="primary"
-        onClick={() => {clickFunction();}}
+        onClick={() => {
+          clickFunction();
+        }}
       >
         <Typography
           sx={{
@@ -37,53 +40,45 @@ function CustomButton(props: { name: string; clickFunction: () => void }) {
 }
 
 export default CustomButton;
-
 ```
+
 📝 **CustomButton.test.tsx**
 
 ```ts
-import { render, screen, fireEvent } from '@testing-library/react';
-import CustomButton from './CustomButton';
-
+import { render, screen, fireEvent } from "@testing-library/react";
+import CustomButton from "./CustomButton";
 
 //TODO: CustomButton component renders correctly with props
 
-test('CustomButton component renders correctly with props', () => {
+test("CustomButton component renders correctly with props", () => {
   const mockClickFunction = jest.fn();
   const buttonName = "Approved";
   render(<CustomButton name={buttonName} clickFunction={mockClickFunction} />);
-  
- 
 });
-
 
 //TODO: Button with the provided name is rendered
-test('Button with the provided name is rendered',()=>{
-    const mockClickFunction = jest.fn();
-    const buttonName = "Click Me";
-    render(<CustomButton name={buttonName} clickFunction={mockClickFunction} />);   
-    const buttonElement = screen.getByRole('button', { name: buttonName });
-     expect(buttonElement).toBeInTheDocument();
+test("Button with the provided name is rendered", () => {
+  const mockClickFunction = jest.fn();
+  const buttonName = "Click Me";
+  render(<CustomButton name={buttonName} clickFunction={mockClickFunction} />);
+  const buttonElement = screen.getByRole("button", { name: buttonName });
+  expect(buttonElement).toBeInTheDocument();
 });
-
 
 //TODO:simulate a click event and check that the provided click function is called
 
-test('simulate a click event and check that the provided click function is called', () => {
+test("simulate a click event and check that the provided click function is called", () => {
+  // CustomButton component renders correctly with props
+  const mockClickFunction = jest.fn();
+  const buttonName = "Click Me";
+  render(<CustomButton name={buttonName} clickFunction={mockClickFunction} />);
 
-    // CustomButton component renders correctly with props
-    const mockClickFunction = jest.fn();
-    const buttonName = "Click Me";
-    render(<CustomButton name={buttonName} clickFunction={mockClickFunction} />);
-    
-    // check that the button with the provided name is rendered
-    const buttonElement = screen.getByRole('button', { name: buttonName });
-    expect(buttonElement).toBeInTheDocument();
-  
-    // simulate a click event and check that the provided click function is called
-    fireEvent.click(buttonElement);
-    expect(mockClickFunction).toHaveBeenCalled();
-  });
-  
+  // check that the button with the provided name is rendered
+  const buttonElement = screen.getByRole("button", { name: buttonName });
+  expect(buttonElement).toBeInTheDocument();
 
+  // simulate a click event and check that the provided click function is called
+  fireEvent.click(buttonElement);
+  expect(mockClickFunction).toHaveBeenCalled();
+});
 ```
