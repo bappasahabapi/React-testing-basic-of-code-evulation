@@ -29,7 +29,7 @@ test('render learn react link',()=>{
 
     npm test
 
-🧿 JEST WATCH MODE
+🧿 **JEST WATCH MODE**
 
 
 
