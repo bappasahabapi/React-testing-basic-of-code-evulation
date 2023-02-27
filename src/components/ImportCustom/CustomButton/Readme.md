@@ -1,10 +1,10 @@
 `Explain:`
 
-    In this test case, we first define a mock click function and a button name to pass as props to the CustomButton component. We then render the component with these props.
+In this test case, we first define a mock click function and a button name to pass as props to the CustomButton component. We then render the component with these props.
 
-    Next, we check that the button with the provided name is rendered and is in the document. We use the getByRole method from the testing library to get the button element by its role and name.
+Next, we check that the button with the provided name is rendered and is in the document. We use the getByRole method from the testing library to get the button element by its role and name.
 
-    Finally, we simulate a click event on the button and check that the provided click function is called. We use the fireEvent method from the testing library to simulate a click event on the button element, and the toHaveBeenCalled method from Jest's mock function API to check that the mock click function has been called.
+Finally, we simulate a click event on the button and check that the provided click function is called. We use the fireEvent method from the testing library to simulate a click event on the button element, and the toHaveBeenCalled method from Jest's mock function API to check that the mock click function has been called.
     
  📁 **CustomButton.tsx**
 ```ts
