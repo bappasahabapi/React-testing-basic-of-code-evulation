@@ -31,38 +31,3 @@ test('render learn react link',()=>{
 })
 
 ```
-
-`📁-02. working on component/greet/greet.test.tsx`
-
-### 🗒️ *greet.tsx*
-
-```ts
-import { GreetProps } from "./greet.type"
-export const Greet = (props:GreetProps) => {
-  return (
-    <div>
-        Hello {props.name}
-    </div>
-  )
-}
-
-```
-### ☑️ greet.test.tsx
-```ts
-import {render, screen} from '@testing-library/react';
-import { Greet } from './greet';
-
-test('Greet Component renders correctly',()=>{
-    render(<Greet/>)
-    //  const textElement = screen.getByText('hello');
-     const textElement = screen.getByText(/hello/i);
-     expect(textElement).toBeInTheDocument()
-})
-
-test('Greet render with name props',()=>{
-    render(<Greet name='bappa'/>)
-   const textElement= screen.getByText('Hello bappa')
-    expect(textElement).toBeInTheDocument()
-})
-
-```
