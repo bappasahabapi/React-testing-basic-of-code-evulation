@@ -1,6 +1,6 @@
 `Explain:`
 
-In this test case, we first define a mock click function and a button name to pass as props to the CustomButton component. We then render the component with these props.
+In this test case, we first define a ** mock click function** and a button name to pass as props to the CustomButton component. We then render the component with these props.
 
 Next, we check that the button with the provided name is rendered and is in the document. We use the getByRole method from the testing library to get the button element by its role and name.
 
