@@ -1,6 +1,10 @@
 `📦 Test Structure`
 
     test(name,function,timeout)
+
+   🧿 test.only() :- just run the test file
+
+   🧿 test.skip() :- just skip the test file
     
 ` 📁-01. First test ` --> **App.test.tsx**
 ```ts
@@ -31,5 +35,31 @@ test('render learn react link',()=>{
 
 🧿 **JEST WATCH MODE**
 
+        › Press a to run all tests.
+        › Press f to run only failed tests.
+        › Press o to only run tests related to changed files.
+        › Press q to quit watch mode.
+        › Press p to filter by a filename regex pattern.
+        › Press t to filter by a test name regex pattern.
+        › Press Enter to trigger a test run.
+
+🧿 **14. Code Coverage** inside the package.json in "scripts"part 
+
+`npm i --save-dev istanbul`
+
+    "coverage": "npm test -- --coverage --watchAll"
+    "jest": {
+        "collectCoverageFrom": [
+        "src/**/*.{js,jsx,ts,tsx}"
+        ],
+        "coverageThreshold": {
+        "global": {
+            "branches": 80,
+            "functions": 80,
+            "lines": 80,
+            "statement": -10
+        }
+        }
+    },
 
 
