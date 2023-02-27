@@ -62,4 +62,6 @@ test('render learn react link',()=>{
         }
     },
 
+🧿 **15. Assertions:** 
 
+    Writing values that meet certain conditions
