@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.10",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.3.0",
@@ -19,9 +22,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
-    "coverage":"yarn test --coverage"
+    "coverage": "npm test -- --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -41,14 +44,32 @@
       "last 1 safari version"
     ]
   },
-  "jest":{
-    "coverageThreshold":{
-      "global":{
-        "branches":80,
-        "functions":80,
-        "lines":80,
-        "statement":-10
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statement": -10
       }
     }
-  }
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bappasahabapi/React-testing-basic-of-code-evulation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bappasahabapi/React-testing-basic-of-code-evulation/issues"
+  },
+  "homepage": "https://github.com/bappasahabapi/React-testing-basic-of-code-evulation#readme"
 }

@@ -1,3 +1,4 @@
  export  type GreetProps={
-    name?:string
+    name?:string,
+    age?:number
 }

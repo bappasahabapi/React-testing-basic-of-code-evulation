@@ -1,9 +1,13 @@
 
- import { GreetProps } from "./greet.type"
+import { GreetProps } from "./greet.type"
 export const Greet = (props:GreetProps) => {
+
+  const {name}=props
   return (
     <div>
-        Hello {props.name}
+        Hello {name} 
+        <h1>{props.age}</h1>
     </div>
   )
 }
+

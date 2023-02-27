@@ -9,7 +9,7 @@ test('Greet Component renders correctly',()=>{
 })
 
 test('Greet render with name props',()=>{
-    render(<Greet name='bappa'/>)
+    render(<Greet name='bappa' age={2} />)
    const textElement= screen.getByText('Hello bappa')
     expect(textElement).toBeInTheDocument()
 })
